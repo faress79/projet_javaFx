@@ -1,0 +1,48 @@
+/* EventsStyles.css */
+
+/* AnchorPane style */
+.anchor-pane {
+    -fx-background-color: #8a2be2; /* Set purple background color */
+}
+
+/* Label style */
+.label {
+    -fx-font-size: 14px; /* Set font size */
+    -fx-text-fill: #333333; /* Set text color */
+}
+
+/* TextField style */
+.text-field {
+    -fx-font-size: 14px; /* Set font size */
+}
+
+/* TextArea style */
+.text-area {
+    -fx-font-size: 14px; /* Set font size */
+}
+
+/* DatePicker style */
+.date-picker {
+    -fx-font-size: 14px; /* Set font size */
+}
+
+/* Button style */
+.button {
+    -fx-font-size: 14px; /* Set font size */
+    -fx-background-color: #800080; /* Set purple background color */
+    -fx-text-fill: #ffffff; /* Set text color */
+    -fx-padding: 8px 16px; /* Set padding */
+    -fx-background-radius: 4px; /* Set border radius */
+    -fx-transition: all 0.3s; /* Add transition for smooth animation */
+}
+
+/* Button hover style */
+.button:hover {
+    -fx-background-color: #4b0082; /* Darker purple on hover */
+}
+
+/* ImageView style */
+.image-view {
+    -fx-fit-height: 220.0; /* Set fit height */
+    -fx-fit-width: 257.0; /* Set fit width */
+}

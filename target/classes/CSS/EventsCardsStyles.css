@@ -1,0 +1,32 @@
+/* EventCardStyles.css */
+
+/* AnchorPane style */
+.anchor-pane {
+    -fx-background-color: #000000; /* Set background color to black */
+}
+
+/* Button style */
+.button {
+    -fx-font-size: 14px; /* Set font size */
+    -fx-background-color: #007bff; /* Set background color */
+    -fx-text-fill: #ffffff; /* Set text color */
+    -fx-padding: 8px 16px; /* Set padding */
+    -fx-background-radius: 4px; /* Set border radius */
+}
+
+/* Button hover style */
+.button:hover {
+    -fx-background-color: #0056b3; /* Set background color on hover */
+}
+
+/* Label style */
+.label {
+    -fx-font-size: 14px; /* Set font size */
+    -fx-text-fill: #ffffff; /* Set text color */
+}
+
+/* ImageView style */
+.image-view {
+    -fx-fit-height: 158.0; /* Set fit height */
+    -fx-fit-width: 177.0; /* Set fit width */
+}

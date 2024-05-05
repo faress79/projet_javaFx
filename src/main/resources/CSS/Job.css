@@ -1,0 +1,23 @@
+.background {
+    -fx-background-color: linear-gradient(to bottom,
+    rgb(215, 172, 238) 0%,
+    rgba(245, 245, 220, 0.85) 50%,
+    rgba(255, 250, 205, 0.75) 100%);
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    animation: waveAnimation 10s ease infinite;
+}
+
+/* Background Gradient Animation */
+@keyframes waveAnimation {
+    0% {
+        background-size: 100% 150%;
+    }
+    50% {
+        background-size: 150% 100%;
+    }
+    100% {
+        background-size: 100% 150%;
+    }
+}

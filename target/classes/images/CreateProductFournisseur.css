@@ -1,0 +1,128 @@
+.create_client_container {
+    -fx-background-color: #EEEEEE;
+}
+
+.create_client_container Text {
+    -fx-font-size: 1.2em;
+    -fx-fill: #888888;
+}
+
+.create_client_container VBox {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #000000;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+
+.create_client_container TextField {
+    -fx-pref-width: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 1.3em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3) ;
+}
+
+.payee_address_lbl {
+    -fx-pref-width: 250;
+    -fx-pref-height: 30;
+    -fx-padding: 5;
+    -fx-background-color: #888888;
+    -fx-background-radius: 5;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.3em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+}
+
+.create_client_container Button {
+    -fx-background-color:  linear-gradient(to right, #132A13, #253F25);
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-pref-width: 250;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+}
+
+
+.create_client_container Button:hover {
+    -fx-cursor: hand;
+}
+
+.error_lbl {
+    -fx-text-fill: #FF0000;
+}
+
+.choice_box_container {
+    -fx-background-color: #bfbfbf;
+}
+
+.choice_box_container .label {
+    -fx-font-size: 1.2em;
+    -fx-fill: #888888;
+}
+
+.choice_box_container .box {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #000000;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+
+.choice_box_container .choice-box {
+    -fx-pref-width: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 1.3em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3) ;
+}
+
+.choice_box_container .choice-box .arrow {
+    -fx-background-color: linear-gradient(to right, #4CAF50, #2E7D32); /* Changement de couleur ici */
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+}
+
+.choice_box_container .choice-box .arrow:hover {
+    -fx-cursor: hand;
+}
+
+.choice_box_container .error_lbl {
+    -fx-text-fill: #FF0000;
+}
+
+
+
+/* Style pour l'ImageView */
+.image-view {
+    -fx-fit-height: 200; /* Hauteur de l'image */
+    -fx-fit-width: 200; /* Largeur de l'image */
+}
+
+/* Style pour le bouton */
+.button-style {
+    -fx-background-color: linear-gradient(to right, #132A13, #253F25); /* Dégradé de couleur */
+    -fx-background-radius: 5; /* Rayon de bordure */
+    -fx-padding: 10 20; /* Espacement intérieur du bouton */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-size: 16px; /* Taille de la police */
+}
+
+.button-style:hover {
+    -fx-background-color: linear-gradient(to right, #253F25, #132A13); /* Dégradé de couleur au survol */
+}
+
+/* Style pour l'AnchorPane */
+.anchor-pane {
+    -fx-background-color: #EEEEEE; /* Couleur de fond */
+}
+
+
+
+
+
+
+
+
+
+

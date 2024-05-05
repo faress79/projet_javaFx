@@ -1,0 +1,90 @@
+/* Existing styles */
+.white-background {
+    -fx-background-color: #fff;
+}
+
+.transparent {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.round-layout {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-background-color: transparent; /* Make sure the background is transparent */
+    -fx-border-color: #D7D7D7;
+}
+
+.selected {
+    -fx-background-color: #E4E4E4;
+}
+
+.mouse-moved:hover{
+    -fx-background-color: #F3F3F3;
+}
+
+.shadow {
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
+}
+
+.rounded {
+    -fx-background-radius: 15;
+}
+
+.warning-icon {
+    -fx-shape: "M0 0h24v24H0z M12 17.5c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25c.69 0 1.25.56 1.25 1.25S12.69 17.5 12 17.5zM12 3.5c5.1 0 9.25 4.15 9.25 9.25S17.1 22 12 22 2.75 17.85 2.75 12 6.9 2.75 12 2.75z";
+    -fx-fill: transparent;
+    -fx-scale-x: 0.8;
+    -fx-scale-y: 0.8;
+}
+
+.warning-tooltip {
+    -fx-background-color: #ffcccc; /* Light red background */
+    -fx-text-fill: #990000; /* Dark red text */
+}
+
+/* New styles for user profile */
+.user-profile {
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-background-color: #F9F9F9;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.user-profile-image {
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius: 50%;
+}
+
+.user-profile-info {
+    -fx-font-size: 14px;
+}
+
+.user-profile-name {
+    -fx-font-weight: bold;
+}
+
+.user-profile-description {
+    -fx-font-style: italic;
+}
+
+.purple-button {
+    -fx-border-radius: 15;
+    -fx-text-fill: #fdfdfd;
+    -fx-background-color: #5f256d;
+    -fx-font-weight: bold;
+}
+
+.yellow-button {
+    -fx-border-radius: 15;
+    -fx-text-fill: #fdfdfd;
+    -fx-background-color: #e2ad39;
+    -fx-font-weight: bold;
+}
+
+.dropdown {
+    -fx-background-color: #fdfdfd;
+    -fx-border-radius: 10;
+    -fx-border-color: black;
+}

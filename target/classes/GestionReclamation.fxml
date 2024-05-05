@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="709.0" prefWidth="1014.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.GestionReclamationController">
+   <ImageView fitHeight="709.0" fitWidth="1014.0" pickOnBounds="true">
+      <image>
+         <Image url="@rm222batch3-kul-13.jpg" />
+      </image>
+   </ImageView>
+
+    <MenuBar layoutX="69.0" layoutY="215.0" prefHeight="27.0" prefWidth="103.0" stylesheets="@CSS/admin.css">
+        <menus>
+            <Menu text="Reclamations">
+                <items>
+                    <MenuItem onAction="#addReclamationAction" text="Add Reclamation" />
+                    <MenuItem onAction="#editReclamationAction" text="Edit Reclamation" />
+                    <MenuItem onAction="#deleteReclamationAction" text="Delete Reclamation" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+    <TextField fx:id="Recherche" layoutX="465.0" layoutY="14.0" prefHeight="27.0" prefWidth="275.0" promptText="Recherche" />
+
+    <ComboBox fx:id="comboBox" layoutX="765.0" layoutY="14.0" onAction="#onComboBox" prefHeight="27.0" prefWidth="120.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Sort by Description" />
+                <String fx:value="Sort by Subject" />
+                <String fx:value="Sort by Created At" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Button layoutX="896.0" layoutY="15.0" onAction="#refreshListAction" prefHeight="25.0" prefWidth="103.0" text="Refresh List" />
+
+    <ListView fx:id="reclamationsListView" layoutX="205.0" layoutY="55.0" prefHeight="631.0" prefWidth="794.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="55.0" />
+            <Label layoutX="219.0" layoutY="17.0" text="Empowering Local Creativity.">
+                <font>
+                    <Font name="Arial" size="18.0" />
+                </font>
+            </Label>
+              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="24.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+<!--                  <image>-->
+<!--                      <Image url="@Images/blog-icon.png" />-->
+<!--                  </image>-->
+              </ImageView>
+            <ImageView fitHeight="139.0" fitWidth="169.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="round-layout">
+<!--                <image>-->
+<!--                    <Image url="@Images/af6bf8a0-614d-4f4c-b8a4-8cd473237aa3.jpg" />-->
+<!--                </image>-->
+            </ImageView>
+    <Button layoutX="69.0" layoutY="381.0" onAction="#exportToPDF" prefHeight="25.0" prefWidth="103.0" text="Export to PDF" />
+    <Button layoutX="69.0" layoutY="421.0" onAction="#exportReclamationsToExcel" prefHeight="25.0" prefWidth="103.0" text="Export to Excel" />
+    <Button layoutX="69.0" layoutY="342.0" onAction="#openStats" prefHeight="25.0" prefWidth="103.0" text="Stats" />
+
+</AnchorPane>
