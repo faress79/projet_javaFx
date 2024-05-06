@@ -24,5 +24,4 @@ public interface IService<T> {
     List<T> recuperer() throws SQLException;
 
 
-
 }

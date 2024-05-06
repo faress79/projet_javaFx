@@ -2,34 +2,29 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.projet3a.controllers.FrontPage">
+<AnchorPane prefHeight="605.0" prefWidth="842.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.projet3a.controllers.FrontPage">
    <children>
-      <ScrollPane layoutX="200.0" layoutY="90.0" prefHeight="515.0" prefWidth="615.0">
+      <ScrollPane layoutY="90.0" prefHeight="515.0" prefWidth="842.0">
          <content>
-            <VBox fx:id="eventContainer" prefHeight="557.0" prefWidth="794.0" />
+            <VBox fx:id="eventContainer" prefHeight="517.0" prefWidth="842.0" />
          </content>
       </ScrollPane>
       <ImageView fitHeight="605.0" fitWidth="200.0">
-         <image>
-            <Image url="file:/C:/Users/ahmed/Downloads/Black_Wallpaper.jpg" />
-         </image>
+         
       </ImageView>
-      <Label fx:id="acceuil1" alignment="CENTER" layoutY="235.0" onMouseClicked="#acceuil1" prefHeight="18.0" prefWidth="200.0" text="ACCEUIL" textFill="WHITE" />
-      <Label fx:id="exit2" alignment="CENTER" layoutY="331.0" onMouseClicked="#exit2" prefHeight="18.0" prefWidth="200.0" text="EXIT" textFill="WHITE" />
-      <ImageView fitHeight="114.0" fitWidth="115.0" layoutX="43.0" layoutY="33.0">
-         <image>
-            <Image url="file:/C:/Users/ahmed/IdeaProjects/projet3A/src/main/resources/simple.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="200.0" layoutX="366.0" layoutY="26.0">
-         <image>
-            <Image url="file:/C:/Users/ahmed/IdeaProjects/projet3A/src/main/resources/Untitled-1.png" />
-         </image>
-      </ImageView>
+      <Label fx:id="acceuil1" alignment="CENTER" layoutX="55.0" layoutY="22.0" onMouseClicked="#acceuil1" prefHeight="40.0" prefWidth="224.0" styleClass="shadow" stylesheets="@css1.css" text="ACCEUIL">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label fx:id="exit2" alignment="CENTER" layoutX="-33.0" layoutY="28.0" onMouseClicked="#exit2" prefHeight="18.0" prefWidth="200.0" styleClass="shadow" stylesheets="@css1.css" text="EXIT">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <ImageView fx:id="qrcode" fitHeight="78.0" fitWidth="77.0" layoutX="721.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

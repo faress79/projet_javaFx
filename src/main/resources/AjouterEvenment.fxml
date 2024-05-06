@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -7,26 +8,23 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.projet3a.controllers.AjouterEvenment">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.projet3a.controllers.AjouterEvenment">
    <children>
-      <Label alignment="CENTER" layoutY="38.0" prefHeight="38.0" prefWidth="800.0" text="AJOUTER UN EVENEMENT">
-         <font>
-            <Font name="Arial" size="36.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nom_eventTF" alignment="CENTER" layoutX="23.0" layoutY="106.0" promptText="Nom Evenement">
+      <HBox layoutX="-2.0" prefHeight="600.0" prefWidth="273.0" styleClass="right-bar" />
+      <TextField fx:id="nom_eventTF" alignment="CENTER" layoutX="23.0" layoutY="106.0" prefHeight="38.0" prefWidth="206.0" promptText="Nom Evenement" styleClass="search-box">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="lieu_eventTF" alignment="CENTER" layoutX="23.0" layoutY="220.0" promptText="Lieu evenment">
+      <TextField fx:id="lieu_eventTF" alignment="CENTER" layoutX="23.0" layoutY="220.0" prefHeight="38.0" prefWidth="206.0" promptText="Lieu evenment">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="nom_starTF" alignment="CENTER" layoutX="24.0" layoutY="284.0" promptText="Nom Du Star">
+      <TextField fx:id="nom_starTF" alignment="CENTER" layoutX="24.0" layoutY="284.0" prefHeight="38.0" prefWidth="206.0" promptText="Nom Du Star">
          <font>
             <Font size="14.0" />
          </font>
@@ -47,8 +45,17 @@
             <Image url="file:/C:/Users/ahmed/IdeaProjects/projet3A/src/main/resources/Untitled-1.png" />
          </image>
       </ImageView>
-      <Button layoutX="50.0" layoutY="26.0" mnemonicParsing="false" onAction="#returnA" text="return" />
+      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#returnA" prefHeight="26.0" prefWidth="76.0" text="return" />
+      <Label layoutX="23.0" layoutY="45.0" prefHeight="43.0" prefWidth="182.0" text="ajouter un evenment" textFill="WHITE">
+         <font>
+            <Font name="MingLiU-ExtB" size="17.0" />
+         </font>
+      </Label>
 
 
    </children>
+   <stylesheets>
+      <URL value="@css1.css" />
+      <URL value="@styles.css" />
+   </stylesheets>
 </AnchorPane>

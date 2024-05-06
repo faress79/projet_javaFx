@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -8,14 +9,18 @@
 
 <AnchorPane prefHeight="428.0" prefWidth="589.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.projet3a.controllers.AfficherEvenment">
    <children>
-      <Button layoutX="356.0" layoutY="17.0" mnemonicParsing="false" onAction="#trier" prefHeight="30.0" prefWidth="218.0" text="Trier par nom">
+      <Button layoutX="413.0" layoutY="14.0" mnemonicParsing="false" onAction="#trier" prefHeight="37.0" prefWidth="171.0" styleClass="shadow" text="Trier par nom">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <stylesheets>
+            <URL value="@css1.css" />
+            <URL value="@styles.css" />
+         </stylesheets>
       </Button>
-      <Label alignment="CENTER" layoutX="3.0" layoutY="5.0" prefHeight="54.0" prefWidth="242.0" text="EVENEMENTS">
+      <Label alignment="CENTER" layoutX="3.0" layoutY="5.0" prefHeight="50.0" prefWidth="199.0" text="EVENEMENTS">
          <font>
-            <Font size="36.0" />
+            <Font size="25.0" />
          </font>
       </Label>
       <ListView fx:id="table" layoutX="3.0" layoutY="60.0" prefHeight="366.0" prefWidth="581.0" />
