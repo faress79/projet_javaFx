@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import tn.esprit.models.user;
 import tn.esprit.services.ServicePersonne;
 
 import javax.mail.*;
@@ -17,6 +16,34 @@ import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
+
+
+import javafx.concurrent.Worker;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import tn.esprit.helper.AlertHelper;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.TextField;
+
+import tn.esprit.models.user;
+import tn.esprit.models.UserSession;
+
+
+import java.util.ArrayList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField   ;
+import javafx.stage.Stage;
+import org.mindrot.jbcrypt.BCrypt;
+import javafx.stage.Window;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 public class confirmController {
 

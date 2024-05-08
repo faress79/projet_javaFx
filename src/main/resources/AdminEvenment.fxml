@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@css1.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.AdminEvenment">
+   <children>
+      <HBox layoutX="-3.0" prefHeight="602.0" prefWidth="207.0" styleClass="right-bar" stylesheets="@css1.css" />
+      <PieChart fx:id="pieChart" layoutX="503.0" layoutY="2.0" prefHeight="82.0" prefWidth="80.0" />
+      <AnchorPane fx:id="afficherEvenmentPane" layoutX="204.0" layoutY="162.0" prefHeight="428.0" prefWidth="589.0" />
+      <Label layoutX="100.0" layoutY="55.0" prefHeight="18.0" prefWidth="99.0" text="ONLINE" textFill="#2c00ff" />
+      <Label layoutX="100.0" layoutY="36.0" prefHeight="18.0" prefWidth="99.0" text="abdelkader kaddachi" textFill="WHITE" />
+      <ImageView fitHeight="82.0" fitWidth="80.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../../392958820_1771585789955960_3054017377430846945_n.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="label" alignment="CENTER" layoutY="221.0" onMouseClicked="#ajouterAdmin" prefHeight="18.0" prefWidth="200.0" styleClass="shadow" text="AJOUTER UN EVENEMENT" textFill="WHITE">
+         <stylesheets>
+            <URL value="@css1.css" />
+            <URL value="@styles.css" />
+         </stylesheets></Label>
+      <Label fx:id="label1" alignment="CENTER" layoutY="266.0" onMouseClicked="#modifierAdmin" prefHeight="18.0" prefWidth="200.0" styleClass="shadow" stylesheets="@css1.css" text="MODIFIER UN EVENEMENT" textFill="WHITE" />
+      <Label fx:id="label2" alignment="CENTER" layoutX="3.0" layoutY="313.0" onMouseClicked="#rechercheAdmin" prefHeight="18.0" prefWidth="200.0" styleClass="shadow" stylesheets="@css1.css" text="RECHERCHER UN EVENEMENT" textFill="WHITE" />
+      <Label fx:id="label3" alignment="CENTER" layoutY="405.0" onMouseClicked="#avisAdmin" prefHeight="18.0" prefWidth="200.0" styleClass="shadow" stylesheets="@css1.css" text="AVIS DES CLIENTS" textFill="WHITE" />
+      <LineChart fx:id="lineChart" layoutX="250.0" layoutY="2.0" prefHeight="98.0" prefWidth="200.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <ImageView fitHeight="26.0" fitWidth="122.0" layoutX="679.0">
+         <image>
+            <Image url="file:/C:/Users/ahmed/IdeaProjects/projet3A/src/main/resources/Untitled-1.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label4" alignment="CENTER" layoutX="2.0" layoutY="518.0" onMouseClicked="#exit" prefHeight="18.0" prefWidth="194.0" styleClass="shadow" stylesheets="@css1.css" text="EXIT" textFill="WHITE" />
+      <Label layoutX="29.0" layoutY="131.0" styleClass="shadow" stylesheets="@css1.css" text="DASHBOARD" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="acceuil" alignment="CENTER" layoutY="466.0" onMouseClicked="#acceuil" prefHeight="18.0" prefWidth="200.0" styleClass="shadow" stylesheets="@css1.css" text="ACCEUIL" textFill="WHITE" />
+      <Label layoutX="499.0" layoutY="139.0" prefHeight="26.0" prefWidth="200.0" text="NOMBRE DE STARS STATISTIQUES" textFill="#5e5e5e" />
+      <Label fx:id="label11" alignment="CENTER" layoutX="-2.0" layoutY="353.0" onMouseClicked="#donation" prefHeight="35.0" prefWidth="200.0" styleClass="shadow" stylesheets="@css1.css" text="Donation des client" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+
+   </children>
+</AnchorPane>

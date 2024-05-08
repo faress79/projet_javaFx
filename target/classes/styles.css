@@ -1,32 +1,283 @@
-.primary-background{
-    -fx-background-color: #E4E7EC;
+/* styles.css */
+/* Styling for the scene background */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #70d6ea, #bdbdbd); /* Gradient from orange to tomato */
 }
 
-.secondary-background{
-    -fx-background-color: #A0B2C0;
-}
-.card{
-    -fx-background-color: #fff;
-    -fx-background-radius: 20;
-    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10.0,  0 , 0 ,10.0);
+.root .title-bar {
+    -fx-background-color: #0078D7; /* Blue color */
 }
 
-.add-remove-layout{
-    -fx-border-radius: 50;
+
+/*List View Styling*/
+/* styles.css */
+/* styles.css */
+
+/* ListView Styling */
+.list-view {
+    -fx-background-color: #dfdfdf; /* Set background color to grey */
+    -fx-font-family: "lucida console"; /* Set font family */
+}
+
+
+.list-cell {
+    -fx-padding: 10px; /* Add padding */
+    -fx-background-color: #ffffff; /* Set background color of cells */
+    -fx-border-color: #cccccc; /* Add border color */
+    -fx-border-width: 1px; /* Add border width */
+    -fx-border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.list-cell:hover {
+    -fx-background-color: #e0e0e0; /* Change background color on hover */
+}
+
+.list-cell:selected {
+    -fx-background-color: #bfbfbf; /* Change background color when selected */
+}
+
+
+/* Custom Scrollbar Styling */
+.scroll-bar:vertical {
+    -fx-background-color: #333333; /* Change background color of vertical scrollbar track */
+    -fx-cursor: s-resize; /* Change cursor to south-resize (vertical scrollbar) */
+    -fx-padding: 3px; /* Add padding around the scrollbar */
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: #333333; /* Change background color of horizontal scrollbar track */
+    -fx-cursor: e-resize; /* Change cursor to east-resize (horizontal scrollbar) */
+    -fx-padding: 3px; /* Add padding around the scrollbar */
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: #666666; /* Change background color of scrollbar thumb */
+    -fx-cursor: hand; /* Change cursor to hand for scrollbar thumb */
+    -fx-border-radius: 5px; /* Apply rounded corners to the scrollbar thumb */
+    -fx-background-radius: 5px; /* Apply rounded corners to the scrollbar thumb */
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 5,0,0,1 ); /* Add drop shadow effect to the scrollbar thumb */
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-background-color: #666666; /* Change background color of scrollbar buttons */
+    -fx-background-radius: 5px; /* Apply rounded corners to the scrollbar buttons */
+    -fx-shape: "M 0 0 L 10 5 L 0 10 Z"; /* Change shape of scrollbar buttons to triangular */
+}
+
+.scroll-bar > .increment-arrow,
+.scroll-bar > .decrement-arrow {
+    -fx-shape: "M 0 0 L 5 5 L 0 10"; /* Change shape of scrollbar arrow icons */
+    -fx-fill: white; /* Change color of scrollbar arrow icons */
+}
+
+.scroll-bar > .track {
+    -fx-background-color: transparent; /* Make scrollbar track transparent */
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-shape: "M 0 0 L 5 0 L 2.5 5 Z"; /* Change shape of vertical scrollbar arrow icons to triangular */
+}
+
+.scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow {
+    -fx-shape: "M 0 0 L 0 5 L 5 2.5 Z"; /* Change shape of horizontal scrollbar arrow icons to triangular */
+}
+
+
+
+
+
+/* Styling for text fields */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-color: #f9f9f9; /* Light gray background */
+    -fx-border-color: #ccc; /* Light gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px; /* Slightly rounded corners */
+    -fx-background-radius: 4px; /* Rounded corners for background */
+}
+
+/* Text field focus effect */
+/* Text field focus effect */
+.text-field:focused {
+    -fx-border-color: #4CAF50; /* Green border when focused */
+    -fx-background-color: #fff; /* White background when focused */
+    -fx-box-shadow: 0 0 50px rgba(76, 175, 80, 0.75); /* Add a subtle shadow when focused */
+}
+
+
+
+
+/* Styling for buttons */
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #000000, #333333); /* Gradient from light grey to dark grey */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-family: "Lucida Console";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 30px; /* Increased border radius for circular shape */
+    -fx-border-radius: 30px; /* Increased border radius for circular shape */
+    -fx-border-color: #2E7D32; /* Darker green border */
+    -fx-border-width: 1px;
+    -fx-cursor: hand; /* Change cursor to hand on hover */
+}
+
+
+
+
+#label:hover,
+#acceuil:hover,
+#dashboard:hover,
+#exit2:hover,
+#acceuil1:hover,
+#user:hover,
+#exit1:hover,
+#label1:hover,
+#label2:hover,
+#label3:hover,
+#label4:hover{
+    -fx-background-color: #CEE452; /* Change background color on hover */
+    -fx-text-fill: white; /* Change text color on hover */
+    -fx-font-weight: bold; /* Make text bold on hover */
+    -fx-cursor: hand; /* Change cursor to hand on hover */
+    -fx-scale-x: 1.1; /* Scale horizontally on hover */
+    -fx-scale-y: 1.1; /* Scale vertically on hover */
+    -fx-transition: scale 0.2s; /* Add transition effect */
+}
+
+
+
+
+/* Button hover effect */
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #808080, #FFFFFF);
+    -fx-background-radius: 30px; /* Increased border radius for circular shape */
+    -fx-border-radius: 30px; /* Increased border radius for circular shape */
+    -fx-border-color: #1B5E20; /* Darken border on hover */
+    -fx-text-fill: #fff; /* Change text color to white on hover */
+    -fx-cursor: hand; /* Change cursor to hand on hover */
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 2, 0, 0); /* Add drop shadow on hover */
+}
+
+
+/* Logo image styling */
+.button .graphic {
+    -fx-padding: 0 10px; /* Adjust padding for spacing */
+}
+
+/* Logo image styling */
+.button .graphic > ImageView {
+    -fx-fit-width: 16px; /* Adjust the width of the logo image */
+    -fx-fit-height: 16px; /* Adjust the height of the logo image */
+}
+
+
+
+
+/* Styling for labels */
+/*.label {*/
+    /*-fx-font-weight: bold;*/
+   /* -fx-text-fill: #000000;*/ /* Black text color */
+   /* -fx-font-family: "Roboto";*/
+    /*-fx-padding: 5px;*/  /* Add padding for better spacing */
+    /*-fx-background-radius: 5px;*/  /* Round the corners */
+/*}*/
+
+
+/* styles.css */
+
+
+
+/* DatePicker Styling */
+.date-picker {
+    -fx-font-family: "Arial"; /* Set font family */
+    -fx-font-size: 14px; /* Set font size */
+    -fx-background-color: #ffffff; /* Set background color */
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: #cccccc; /* Set background color of arrow button */
+    -fx-background-radius: 0; /* Remove rounded corners */
+}
+
+.date-picker > .arrow-button:hover {
+    -fx-background-color: #999999; /* Change background color of arrow button on hover */
+}
+
+.date-picker > .arrow-button:pressed {
+    -fx-background-color: #666666; /* Change background color of arrow button when pressed */
+}
+
+.date-picker > .text-field {
+    -fx-background-color: #ffffff; /* Set background color of text field */
+}
+
+.date-picker:focused > .text-field {
+    -fx-background-color: #e0e0e0; /* Change background color of text field when focused */
+}
+
+.date-picker > .popup {
+    -fx-background-color: #ffffff; /* Set background color of popup */
+}
+
+.date-picker > .popup > .month-year-pane {
+    -fx-background-color: #f4f4f4; /* Set background color of month-year pane */
+}
+
+.date-picker > .popup > .calendar-grid {
+    -fx-background-color: #f4f4f4; /* Set background color of calendar grid */
+}
+
+.date-picker > .popup > .calendar-grid > .day-cell {
+    -fx-background-color: #ffffff; /* Set background color of individual day cells */
+}
+
+.date-picker > .popup > .calendar-grid > .day-cell:hover {
+    -fx-background-color: #e0e0e0; /* Change background color of day cell on hover */
+}
+
+.date-picker > .popup > .calendar-grid > .day-cell:focused {
+    -fx-background-color: #cccccc; /* Change background color of focused day cell */
+}
+
+.date-picker > .popup > .calendar-grid > .day-cell:selected {
+    -fx-background-color: #bfbfbf; /* Change background color of selected day cell */
+}
+
+.date-picker > .popup > .calendar-grid > .week-number-cell {
+    -fx-background-color: #f4f4f4; /* Set background color of week number cells */
+}
+
+.date-picker > .popup > .calendar-grid > .week-number-cell:hover {
+    -fx-background-color: #e0e0e0; /* Change background color of week number cell on hover */
+}
+
+
+.star-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: "M 0.5,0 L 0.61,0.35 L 1,0.38 L 0.73,0.63 L 0.79,1 L 0.5,0.82 L 0.21,1 L 0.27,0.63 L 0,0.38 L 0.39,0.35 Z";
+    -fx-background-insets: 0;
     -fx-border-width: 1;
-    -fx-border-color: #303030;
+    -fx-border-color: black;
+    -fx-border-radius: 2;
+    -fx-scale-x: 2; /* Increase the scale horizontally */
+    -fx-scale-y: 2; /* Increase the scale vertically */
 }
 
-.rect-round{
-    -fx-background-radius: 20;
+.star-button.selected {
+    -fx-background-color: #002bfd; /* Change color for selected stars */
+}
+
+.star-button.unselected {
+    -fx-background-color: transparent; /* Change color for unselected stars */
 }
 
 
-.white-border{
-    -fx-border-color: #ffffff;
-}
 
-.botton{
-    -fx-background-color: #303030;
-    -fx-background-radius: 20;
-}

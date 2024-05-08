@@ -3,12 +3,21 @@ package tn.esprit.controllers;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.web.WebEngine;
 import tn.esprit.helper.AlertHelper;
+import com.twilio.Twilio;
+import com.twilio.converter.Promoter;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+
+import java.net.URI;
+import java.math.BigDecimal;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-
+import tn.esprit.models.Personne;
 import tn.esprit.models.user;
 import tn.esprit.models.UserSession;
 
@@ -22,17 +31,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-
-
-import javafx.fxml.Initializable;
-
-
-import java.net.URL;
-import java.util.ResourceBundle;
-
-
 
 
 
@@ -52,6 +53,8 @@ public class AjouterPersonne {
 
     @FXML
     private TextField tfNom;
+    @FXML
+    private WebView captchaWebView;
 
     @FXML
     private TextField tfPrenom;
@@ -64,41 +67,55 @@ public class AjouterPersonne {
     private TextField tfEmail_Login;
     @FXML
     private PasswordField mdpTF;
+
+
+
+
+
     @FXML
-    private WebView captchaWebView;
-
-
-
-    @FXML
-    void affichierPerssone(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AffichierPersonne.fxml"));
+    void goToAfficher() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterPersonne.fxml"));
 
         try {
-            Parent root = loader.load();
-            AffichierPersonne ap = loader.getController();
-
-            // Get the list of users
-            ArrayList<user> userList = sp.getAll();
-
-            // Construct a formatted string containing user information
-            StringBuilder userInfo = new StringBuilder();
-            for (user u : userList) {
-                userInfo.append("ID: ").append(u.getId_user()).append("\n")
-                        .append("Nom: ").append(u.getNom()).append("\n")
-                        .append("Prenom: ").append(u.getPrenom()).append("\n")
-                        .append("Email: ").append(u.getEmail()).append("\n\n")
-                        .append("Password: ").append(u.getPassword()).append("\n\n");
-            }
-
-            // Set the formatted user information to the label
-            ap.setLbPersones(userInfo.toString());
-
-            // Set the scene root
-            tfemail.getScene().setRoot(root);
+            Parent   root = loader.load();
+            AjouterPersonne controller = loader.getController();
+            tfEmail_Login.getScene().setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
     }
+
+//    @FXML
+//    void affichierPerssone(ActionEvent event) {
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AffichierPersonne.fxml"));
+//
+//        try {
+//            Parent root = loader.load();
+//            AffichierPersonne ap = loader.getController();
+//
+//            // Get the list of users
+//            ArrayList<user> userList = sp.getAll();
+//
+//            // Construct a formatted string containing user information
+//            StringBuilder userInfo = new StringBuilder();
+//            for (user u : userList) {
+//                userInfo.append("ID: ").append(u.getId_user()).append("\n")
+//                        .append("Nom: ").append(u.getNom()).append("\n")
+//                        .append("Prenom: ").append(u.getPrenom()).append("\n")
+//                        .append("Email: ").append(u.getEmail()).append("\n\n")
+//                        .append("Password: ").append(u.getPassword()).append("\n\n");
+//            }
+//
+//            // Set the formatted user information to the label
+//            ap.setLbPersones(userInfo.toString());
+//
+//            // Set the scene root
+//            tfemail.getScene().setRoot(root);
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
+//    }
 
     private boolean patternMatches(String email) {
         // Define your email validation pattern here
@@ -134,6 +151,34 @@ public class AjouterPersonne {
         // Password meets all criteria
         return true;
     }
+    private void sendSMS() {
+        try {
+            final String ACCOUNT_SID = "AC3c403317743584fc170c7a73bbe00b14";
+            final String AUTH_TOKEN = "8f77cd3d3b9875014488c79183f3e27b";
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+
+            // Customize the message text and phone numbers as needed
+
+
+            String messageText = "thanks for creating an account with us: ";
+            String fromPhoneNumber = "+15086375286"; // Your Twilio phone number
+            String toPhoneNumber = "+21627663060"; // Recipient's phone number
+
+            Message message = Message.creator(
+                            new com.twilio.type.PhoneNumber(toPhoneNumber),
+                            new com.twilio.type.PhoneNumber(fromPhoneNumber),
+                            messageText)
+                    .create();
+
+            System.out.println("SMS sent successfully. SID: " + message.getSid());
+
+        } catch (Exception e) {
+
+            AlertHelper.showAlert(Alert.AlertType.ERROR, mdpTF.getScene().getWindow(), "Error", "\"Failed to send SMS. Please try again later.\"");
+            e.printStackTrace(); // Handle exception appropriately
+
+        }
+    }
 
     @FXML
     void ajouterPersonne(ActionEvent event) {
@@ -164,6 +209,8 @@ public class AjouterPersonne {
         u.setPrenom(tfPrenom.getText());
         u.setEmail(tfemail.getText());
         u.setPassword(hashedPassword);
+        sendSMS();
+
 
         sp.add(u);
 
@@ -205,32 +252,33 @@ public class AjouterPersonne {
         }
 
         int authenticationResult = sp.authenticate(email, password);
+
         if (authenticationResult != 0) {
             // Authentication successful
             UserSession userSession = UserSession.getInstace(email, sp.roles(authenticationResult));
             System.out.println(userSession);
-            goToHome();
+            if (sp.roles(sp.authenticate(email, password)).equals("role_admin")) {
 
-        } else if (sp.roles(sp.authenticate(email, password)).equals("role_admin")) {
-            //auc.setAfficherTF(" bienvnu responsable societe");
-            //btn.getScene().setRoot(root);
-            goToBack();
-
-
+                goToBack();
+            } else {
+                goToHome();
+            }
         } else {
             // Authentication failed
             AlertHelper.showAlert(Alert.AlertType.ERROR, tfEmail_Login.getScene().getWindow(), "Error",
                     "Invalid email or password.");
         }
+
+
     }
-    @FXML
+
     public void initialize() {
         WebEngine webEngine = captchaWebView.getEngine();
 
         String htmlContent = "<html><head>" +
-                "<script src='https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'></script>" +
+                "<script src='https://www.google.com/recaptcha/api.js?render=6LfYuoYpAAAAACfIW5Y97UGkS5D0ar_OfWg3MRHU'></script>" +
                 "</head><body>" +
-                "<div class='g-recaptcha' data-sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' data-callback='onClick'></div>" +
+                "<div class='g-recaptcha' data-sitekey='6LfYuoYpAAAAACfIW5Y97UGkS5D0ar_OfWg3MRHU' data-callback='onClick'></div>" +
                 "</body></html>";
 
         webEngine.loadContent(htmlContent);
@@ -241,9 +289,5 @@ public class AjouterPersonne {
                 System.out.println("WebView failed to load: " + webEngine.getLoadWorker().getException().getMessage());
             }
         });
-    }
-
-
-    public void handleCreateAccountButtonAction(ActionEvent actionEvent) {
     }
 }

@@ -7,6 +7,8 @@ package tn.esprit.models;
  */
 
 
+import javafx.beans.value.ObservableValue;
+
 /**
  *
  * @author fares
@@ -69,7 +71,12 @@ public class user {
 
     }
 
-    public user(String idUser, String nom, String prenom, String roles, int email, String password) {
+    public user(String nom, String prenom, String email, String password, int id_User, String roles) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.roles = roles;
+        this.email = email;
+        this.password = password;
     }
 
     public static void add(user p) {
@@ -119,10 +126,11 @@ public class user {
     public String getRoles() {
         return this.roles;
     }
-
     public void setRoles(String role) {
-        this.roles = role;
+        // Always set the role to "role_user"
+        this.roles = "role_user";
     }
+
 
     public String getEmail() {
         return this.email;

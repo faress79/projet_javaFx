@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="50.0" prefWidth="750.0" styleClass="product_container" stylesheets="@itemBack.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.ListePersonne">
+    <children>
+        <HBox prefHeight="40.0" prefWidth="502.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <Label fx:id="tfnom" text="Feres" />
+                <Label fx:id="tfprenom" prefHeight="22.0" prefWidth="163.0" text="Makhlouf" />
+                <Label fx:id="tfemail" prefHeight="18.0" prefWidth="170.0" styleClass="acc_display_lbl" stylesheets="@itemBack.css" text="Feres.makhlouf@esprit.tn" />
+            </children>
+        </HBox>
+<!--        <HBox fx:id="actioncol" alignment="CENTER" layoutX="582.0" layoutY="5.0" prefHeight="40.0" prefWidth="163.0">-->
+<!--            <children>-->
+<!--                <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" styleClass="delete_btn" stylesheets="@itemBack.css" text="Delete">-->
+<!--                    <graphic>-->
+<!--                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="delete_btn">-->
+<!--                        </ImageView>-->
+<!--                    </graphic>-->
+<!--                    <HBox.margin>-->
+<!--                        <Insets />-->
+<!--                    </HBox.margin>-->
+<!--                </Button>-->
+<!--                <Button fx:id="edit" mnemonicParsing="false" onAction="#edit" styleClass="edit_btn" stylesheets="@itemBack.css" text="Edit">-->
+<!--                    <graphic>-->
+<!--                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="delete_btn">-->
+<!--                        </ImageView>-->
+<!--                    </graphic>-->
+<!--                    <HBox.margin>-->
+<!--                        <Insets />-->
+<!--                    </HBox.margin>-->
+<!--                </Button>-->
+<!--            </children>-->
+<!--        </HBox>-->
+    </children>
+</AnchorPane>

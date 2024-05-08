@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="740.0" prefWidth="953.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.FrontPage">
+   <children>
+      <ScrollPane layoutY="89.0" prefHeight="667.0" prefWidth="966.0">
+         <content>
+            <VBox fx:id="eventContainer" prefHeight="747.0" prefWidth="1218.0" />
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="605.0" fitWidth="200.0">
+         
+      </ImageView>
+      <Label fx:id="acceuil1" alignment="CENTER" layoutX="237.0" layoutY="22.0" onMouseClicked="#acceuil1" prefHeight="40.0" prefWidth="224.0" styleClass="shadow" stylesheets="@css1.css" text="ACCEUIL">
+         <font>
+            <Font name="Microsoft PhagsPa" size="19.0" />
+         </font></Label>
+      <Label fx:id="exit2" alignment="CENTER" layoutX="14.0" layoutY="22.0" onMouseClicked="#exit2" prefHeight="40.0" prefWidth="209.0" styleClass="shadow" stylesheets="@css1.css" text="EXIT">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <ImageView fx:id="qrcode" fitHeight="70.0" fitWidth="73.0" layoutX="635.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="510.0" layoutY="34.0" prefHeight="31.0" prefWidth="161.0" text="scan QR code">
+         <font>
+            <Font name="Microsoft New Tai Lue" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

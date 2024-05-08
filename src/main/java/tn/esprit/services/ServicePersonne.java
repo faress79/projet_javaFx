@@ -29,7 +29,7 @@ public abstract class ServicePersonne implements IService<user> {
     public void add(user user) {
         //1-req sql INSERT
         //2-executer req
-        String qry ="INSERT INTO `user`(`nom`, `prenom`, `email`, `password`) VALUES (?,?,?,?)";
+        String qry ="INSERT INTO `user`(`nom`, `prenom`, `email`, `password`,`roles`) VALUES (?,?,?,?,'role_user')";
         try {
             PreparedStatement pstm =cnx.prepareStatement(qry);
 
@@ -81,36 +81,36 @@ public abstract class ServicePersonne implements IService<user> {
     }
 
 
-    /* @Override
-     public  ArrayList<user> getAll()  {
-         //1-req SELECT
-         //2-recuperation de la base de donné remplissage dans Array
-         //3-retour du tableau done
-         ArrayList<user> users = new ArrayList<>();
-         String qry ="SELECT * FROM user";
-         try {
-             Statement stm = cnx.createStatement();
+   /* @Override
+    public  ArrayList<user> getAll()  {
+        //1-req SELECT
+        //2-recuperation de la base de donné remplissage dans Array
+        //3-retour du tableau done
+        ArrayList<user> users = new ArrayList<>();
+        String qry ="SELECT * FROM user";
+        try {
+            Statement stm = cnx.createStatement();
 
-             ResultSet rs = stm.executeQuery(qry);
+            ResultSet rs = stm.executeQuery(qry);
 
-             while (rs.next()){
-                 user p = new user();
-                 p.setId_user(rs.getInt(1));
-                 p.setNom(rs.getString("nom"));
-                 p.setPrenom(rs.getString("prenom"));
-                 p.setEmail(rs.getString("email"));
+            while (rs.next()){
+                user p = new user();
+                p.setId_user(rs.getInt(1));
+                p.setNom(rs.getString("nom"));
+                p.setPrenom(rs.getString("prenom"));
+                p.setEmail(rs.getString("email"));
 
-                 users.add(p);
-             }
+                users.add(p);
+            }
 
-         } catch (SQLException e) {
-             System.out.println(e.getMessage());
-         }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
 
 
-         return users
-                 ;
-     }*/
+        return users
+                ;
+    }*/
     public  ArrayList<user> getAll() {
         String requete = "select * from user";
         ArrayList<user> list = new ArrayList<>();
@@ -146,28 +146,28 @@ public abstract class ServicePersonne implements IService<user> {
     }
 
 
-    /* @Override
-     public void update(Personne personne) {
-
-     }
-
-     @Override
-     public boolean delete(Personne personne) {
-         return false;
-     }*/
-    @Override
-    public void delete(user user) {
-        String requete = "DELETE FROM user WHERE id = " + user.getId_user() + "";
-
-        try {
-            Statement stm = cnx.createStatement();
-
-            stm.executeUpdate(requete);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+   /* @Override
+    public void update(Personne personne) {
 
     }
+
+    @Override
+    public boolean delete(Personne personne) {
+        return false;
+    }*/
+   @Override
+   public void delete(user user) {
+       String requete = "DELETE FROM user WHERE id_user = " + user.getId_user() + "";
+
+       try {
+           Statement stm = cnx.createStatement();
+
+           stm.executeUpdate(requete);
+       } catch (SQLException e) {
+           throw new RuntimeException(e);
+       }
+
+   }
 
     public user getUserByEmail(String email) {
         try {
@@ -304,6 +304,7 @@ public abstract class ServicePersonne implements IService<user> {
         }
 
     }
+
     public List<user> getAllll() {
         List<user> users = new ArrayList<>();
         String query = "SELECT * FROM user";
